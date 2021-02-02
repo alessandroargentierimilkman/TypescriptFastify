@@ -2,7 +2,7 @@ import { RouteHandlerMethod } from "fastify"
 import { RouteGenericInterface } from "fastify/types/route"
 import { Server, IncomingMessage, ServerResponse } from "http"
 import { User } from "../domain/User"
-import { UserService } from "../service/UserService"
+import { UserServiceImpl } from "../service/UserServiceImpl"
 
 
 
@@ -27,7 +27,7 @@ export const GetUserByNameHandler: RouteHandlerMethod<Server, IncomingMessage, S
    console.log("Name: " + name)
    console.log("Token: " + token)
 
-   return UserService.getInstance().getUserByName(name)
+   return UserServiceImpl.getInstance().getUserByName(name)
 })
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ POST /users -d '{"name": "Nick", "surname": "Furcedda", "age": 87}' ~~~~~~~~~~~~~~~~~~~~ */
@@ -47,5 +47,5 @@ export const PostUserHandler: RouteHandlerMethod<Server, IncomingMessage, Server
 
    const user: User = request.body
 
-   return UserService.getInstance().postUser(user)
+   return UserServiceImpl.getInstance().postUser(user)
 })

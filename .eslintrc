@@ -1,0 +1,16 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {"project": "./tsconfig.json"},
+  "rules": {
+    "@typescript-eslint/rule-name": "error",
+    "@typescript-eslint/semi": ["warn", "never"],
+    "@typescript-eslint/indent" : ["warn", 3],
+    "@typescript-eslint/no-empty": [true, "allow-empty-functions", "allow-empty-catch"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ]
+}
